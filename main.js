@@ -45,40 +45,42 @@ class LottoBall extends HTMLElement {
 
 customElements.define('lotto-ball', LottoBall);
 
-const generatorBtn = document.getElementById('generator-btn');
-const themeToggleBtn = document.getElementById('theme-toggle-btn');
-const numberDisplay = document.querySelector('.number-display');
+document.addEventListener('DOMContentLoaded', () => {
+  const generatorBtn = document.getElementById('generator-btn');
+  const themeToggleBtn = document.getElementById('theme-toggle-btn');
+  const numberDisplay = document.querySelector('.number-display');
 
-generatorBtn.addEventListener('click', () => {
-  numberDisplay.innerHTML = '';
-  const numbers = new Set();
-  while (numbers.size < 6) {
-    numbers.add(Math.floor(Math.random() * 45) + 1);
-  }
+  generatorBtn.addEventListener('click', () => {
+    numberDisplay.innerHTML = '';
+    const numbers = new Set();
+    while (numbers.size < 6) {
+      numbers.add(Math.floor(Math.random() * 45) + 1);
+    }
 
-  const sortedNumbers = Array.from(numbers).sort((a, b) => a - b);
+    const sortedNumbers = Array.from(numbers).sort((a, b) => a - b);
 
-  sortedNumbers.forEach(number => {
-    const color = getColor(number);
-    const lottoBall = document.createElement('lotto-ball');
-    lottoBall.setAttribute('number', number);
-    lottoBall.setAttribute('color', color);
-    numberDisplay.appendChild(lottoBall);
+    sortedNumbers.forEach(number => {
+      const color = getColor(number);
+      const lottoBall = document.createElement('lotto-ball');
+      lottoBall.setAttribute('number', number);
+      lottoBall.setAttribute('color', color);
+      numberDisplay.appendChild(lottoBall);
+    });
   });
-});
 
-themeToggleBtn.addEventListener('click', () => {
-  document.body.classList.toggle('dark-mode');
-  const isDarkMode = document.body.classList.contains('dark-mode');
-  themeToggleBtn.textContent = isDarkMode ? 'Light Mode' : 'Dark Mode';
-  localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
-});
+  themeToggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    const isDarkMode = document.body.classList.contains('dark-mode');
+    themeToggleBtn.textContent = isDarkMode ? 'Light Mode' : 'Dark Mode';
+    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+  });
 
-// Initialize theme
-if (localStorage.getItem('theme') === 'dark') {
-  document.body.classList.add('dark-mode');
-  themeToggleBtn.textContent = 'Light Mode';
-}
+  // Initialize theme
+  if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark-mode');
+    themeToggleBtn.textContent = 'Light Mode';
+  }
+});
 
 function getColor(number) {
   if (number <= 10) {
