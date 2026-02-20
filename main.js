@@ -1,30 +1,52 @@
 class LottoBall extends HTMLElement {
   constructor() {
     super();
-    const shadow = this.attachShadow({ mode: 'open' });
+    this.attachShadow({ mode: 'open' });
+  }
+
+  connectedCallback() {
+    this.render();
+  }
+
+  static get observedAttributes() {
+    return ['number', 'color'];
+  }
+
+  attributeChangedCallback() {
+    this.render();
+  }
+
+  render() {
     const number = this.getAttribute('number');
     const color = this.getAttribute('color');
 
-    const ball = document.createElement('div');
-    ball.style.backgroundColor = color;
-    ball.style.width = '50px';
-    ball.style.height = '50px';
-    ball.style.borderRadius = '50%';
-    ball.style.display = 'flex';
-    ball.style.justifyContent = 'center';
-    ball.style.alignItems = 'center';
-    ball.style.color = 'white';
-    ball.style.fontSize = '1.5rem';
-    ball.style.fontWeight = 'bold';
-    ball.textContent = number;
+    if (!number || !color) return;
 
-    shadow.appendChild(ball);
+    this.shadowRoot.innerHTML = `
+      <style>
+        .ball {
+          background-color: ${color};
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: white;
+          font-size: 1.5rem;
+          font-weight: bold;
+          box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+      </style>
+      <div class="ball">${number}</div>
+    `;
   }
 }
 
 customElements.define('lotto-ball', LottoBall);
 
 const generatorBtn = document.getElementById('generator-btn');
+const themeToggleBtn = document.getElementById('theme-toggle-btn');
 const numberDisplay = document.querySelector('.number-display');
 
 generatorBtn.addEventListener('click', () => {
@@ -44,6 +66,19 @@ generatorBtn.addEventListener('click', () => {
     numberDisplay.appendChild(lottoBall);
   });
 });
+
+themeToggleBtn.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+  const isDarkMode = document.body.classList.contains('dark-mode');
+  themeToggleBtn.textContent = isDarkMode ? 'Light Mode' : 'Dark Mode';
+  localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+});
+
+// Initialize theme
+if (localStorage.getItem('theme') === 'dark') {
+  document.body.classList.add('dark-mode');
+  themeToggleBtn.textContent = 'Light Mode';
+}
 
 function getColor(number) {
   if (number <= 10) {
