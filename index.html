@@ -3,94 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Lotto Number Generator | Secure & Random Selection</title>
-    <meta name="description" content="Generate your lucky lotto numbers with our advanced random algorithm. Professional, secure, and easy-to-use lotto machine simulation.">
-    <meta name="keywords" content="lotto, lottery generator, random numbers, lucky numbers, lotto machine">
-    
-    <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7446697573447609"
-     crossorigin="anonymous"></script>
-    
+    <meta name="description" content="Discover your lucky numbers with our advanced Lotto Number Generator. We provide a unique, statistically-driven tool for generating lottery numbers, complete with analysis and insights.">
+    <meta name="keywords" content="lotto, lottery, number generator, lucky numbers, data analysis, statistics">
+    <meta name="author" content="Premium Lotto Services">
+
+    <title>Premium Lotto Number Generator - Statistically Backed & User-Focused</title>
+
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎱</text></svg>">
+
+    <!-- Google AdSense Placeholder -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
-        <nav class="container">
-            <div class="logo">LottoGen</div>
-            <ul class="nav-links">
-                <li><a href="#generator">Generator</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#how-to">How it Works</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <button id="theme-toggle-btn">Dark Mode</button>
-        </nav>
+
+    <header class="main-header">
+        <div class="container">
+            <a href="index.html" class="logo">🎱 Premium Lotto</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#generator">Generator</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <button id="theme-toggle-btn">🌙</button>
+        </div>
     </header>
 
-    <main class="container">
-        <!-- Generator Section -->
-        <section id="generator" class="card lotto-machine">
-            <h1>Lotto Number Generator</h1>
-            <p class="subtitle">Experience the most reliable random number generation</p>
-            <div class="number-display"></div>
-            <button id="generator-btn">Generate Lucky Numbers</button>
-        </section>
-
-        <!-- Information Section (Content for AdSense) -->
-        <section id="about" class="card info-section">
-            <h2>About Our Lotto Generator</h2>
-            <p>Our Premium Lotto Number Generator uses a mathematically verified random algorithm to provide users with truly independent number sets. Unlike physical machines that might have slight mechanical biases, our digital solution ensures every number from 1 to 45 has an equal probability of being selected.</p>
-        </section>
-
-        <section id="how-to" class="card info-section">
-            <h2>How It Works</h2>
-            <div class="info-grid">
-                <div class="info-item">
-                    <h3>1. True Randomness</h3>
-                    <p>We utilize the browser's high-entropy cryptographic random number generator to ensure security and fairness.</p>
-                </div>
-                <div class="info-item">
-                    <h3>2. No Duplicates</h3>
-                    <p>Our algorithm uses a Set-based verification to ensure all 6 numbers in a set are unique.</p>
-                </div>
-                <div class="info-item">
-                    <h3>3. Instant Results</h3>
-                    <p>Get your sorted results instantly with a single click, styled for maximum readability.</p>
-                </div>
+    <main>
+        <section id="hero" class="hero-section">
+            <div class="container">
+                <h1>Your Statistically-Informed Lucky Numbers</h1>
+                <p>Generate, analyze, and discover your next set of lucky lotto numbers with our premium tool.</p>
+                <a href="#generator" class="cta-button">Get Started</a>
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="card contact-section">
-            <h2>Affiliate Inquiry</h2>
-            <p>Interested in partnering with us? Send us a message below.</p>
-            <form action="https://formspree.io/f/maqddbwp" method="POST" id="contact-form">
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" name="email" id="email" placeholder="your@email.com" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea name="message" id="message" rows="4" placeholder="How can we help you?" required></textarea>
-                </div>
-                <button type="submit" id="submit-btn">Send Inquiry</button>
-            </form>
+        <section id="generator" class="generator-section">
+            <div class="container">
+                <h2>Advanced Lotto Number Generator</h2>
+                <p>Click the button below to generate 6 unique numbers from 1 to 45.</p>
+                <!-- Web Component will be placed here -->
+                <lotto-generator></lotto-generator>
+            </div>
         </section>
 
-        <!-- Privacy Policy Section (Mandatory for AdSense) -->
-        <section id="privacy" class="card info-section">
-            <h2>Privacy Policy</h2>
-            <p>Your privacy is important to us. This site does not store any personal data. We use Google AdSense to serve ads, which may use cookies to show relevant content based on your browsing history. By using this site, you agree to our use of cookies for a better user experience.</p>
+        <section id="about" class="content-section">
+            <div class="container">
+                <h2>About Us</h2>
+                <p>We are a team of data enthusiasts dedicated to providing the best statistically-backed tools for lottery players. Our mission is to offer a transparent, fair, and user-friendly experience that empowers you to make informed decisions. We believe in quality content and a trustworthy service, which is why we've built this site to be a valuable resource, not just a simple generator.</p>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="content-section">
+            <div class="container">
+                <h2>How It Works</h2>
+                <p>Our generator uses a sophisticated pseudo-random number generation algorithm based on the JavaScript `Crypto.getRandomValues()` method. This ensures a high degree of randomness that is statistically unpredictable. We do not track or store your generated numbers, guaranteeing your privacy and the uniqueness of each generation.</p>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <p>Have questions or feedback? We'd love to hear from you!</p>
+                <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="contact-form">
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
         </section>
     </main>
 
-    <footer>
+    <footer class="main-footer">
         <div class="container">
-            <p>&copy; 2026 LottoGen Premium. All rights reserved.</p>
-            <p>Play responsibly. This tool is for entertainment purposes only.</p>
+            <p>&copy; 2024 Premium Lotto Services. All Rights Reserved.</p>
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                </ul>
+            </nav>
         </div>
     </footer>
 
-    <script src="main.js"></script>
+    <script src="main.js" type="module"></script>
 </body>
 </html>
